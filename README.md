@@ -66,41 +66,35 @@ Trained BERT Model
 docker build -t <dockerhub-username>/sentiment-service:latest .
 docker run -p 8000:8000 <dockerhub-username>/sentiment-service:latest
 
-
-
-Test:
-
-curl http://127.0.0.1:8000/health
-
+```
 
 Test:
-
+```bash
 curl http://127.0.0.1:8000/health
-
+```
 
 Test:
+```bash
 
 curl http://127.0.0.1:8000/health
+```
 
+Test:
+```bash
+curl http://127.0.0.1:8000/health
+```
 
-CI Pipeline
+## CI Pipeline
 
 On every push:
+-Install dependencies
+-Run pytest
+-validate API logic without loading the full model
 
-Install dependencies
+## Future Improvements
 
-Run pytest
-
-Validate API logic without loading the full model
-
-Future Improvements
-
-Automated CD pipeline (image build + push)
-
-Model versioning
-
-Monitoring & logging
-
-Horizontal Pod Autoscaler
-
-Cloud deployment (EKS/GKE/AKS)
+-Automated CD pipeline (image build + push)
+-Model versioning
+-Monitoring & logging
+-Horizontal Pod Autoscaler
+-Cloud deployment (EKS/GKE/AKS)
